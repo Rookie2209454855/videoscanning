@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.video.scanning.domain.VideoIP">
+    <sql id="videIP">
+        id,ip,des
+    </sql>
+
+    <!--添加服务ip-->
+    <insert id="addIpServer">
+        INSERT INTO video_ip(ip,des)
+        VALUES ()
+    </insert>
+
+</mapper>
