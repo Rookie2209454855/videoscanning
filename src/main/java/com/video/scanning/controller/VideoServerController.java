@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * Created by fengtiepeng on 2017/10/10.
+ *
+ * 扫描配置页面
+ * 配置文件主机，端口
  */
 @RestController
 @RequestMapping("/v1")
@@ -28,4 +31,17 @@ public class VideoServerController {
     public Integer addIpServer(@RequestBody VideoIP videoIP){
         return videoIPService.addIpServer(videoIP);
     }
+
+
+    /***
+     *
+     * @return
+     */
+    public Integer addcomputer(){
+
+        return null;
+    };
+
+
+
 }

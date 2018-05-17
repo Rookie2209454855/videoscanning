@@ -37,7 +37,7 @@ public  class init {
      * @return
      */
     public static List<Vide> getFile(File file)throws UnknownHostException {
-        String fileIp = "http://"+ InetAddress.getLocalHost().getHostAddress();
+        //String fileIp = "http://"+ InetAddress.getLocalHost().getHostAddress();
         if(file!=null) {//如果当前文件不为空
             if (file.isDirectory())//如果当前文件是个文件夹
             {
@@ -58,12 +58,11 @@ public  class init {
                     String typ=name.substring(start+1,name.length());
                     if(reMap().get(typ)!=null){
                         System.out.print(reMap().get(typ));
-                        Vide videPath=new Vide(name,reMap().get(typ),filepath,fileIp);
+                        Vide videPath=new Vide(name,reMap().get(typ),filepath,null);
                         list.add(videPath);//获取抽象路径名的绝对路径名字符串，存入list数组里边}
                     }
                 }
             }
-
         }
         return  list;
     }

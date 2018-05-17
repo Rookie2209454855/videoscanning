@@ -1,10 +1,10 @@
 database:
-    host: 192.168.123.53
+    host: 192.168.137.1
     port: 3306
     name: root
 
 server:
-    port: 9006
+    port: 88
 
 spring:
     datasource:
