@@ -11,4 +11,5 @@ import org.apache.ibatis.annotations.Param;
 public interface VideoIPDao {
 
     Integer addIpServer(@Param("videoIP") VideoIP videoIP);
+
 }
