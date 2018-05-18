@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!--服务主机配置-->
+<mapper namespace="com.video.scanning.dao.HostServerDao">
+    <sql id="hostServer">
+        id,name,ip_addres as ipAdress,port,version
+    </sql>
+
+    <!--单主机查询-->
+    <select id="selHostServer" resultType="HostServer">
+        SELECT
+          <include refid="hostServer" />
+        FROM host_server AS hs
+        WHERE hs.id=#{id}
+    </select>
+
+    <!--多主机查询-->
+    <select id="selHostServers" resultType="HostServer">
+        SELECT
+          <include refid="hostServer" />
+        FROM host_server AS hs
+        WHERE 1=1
+        <if test="hostServer.name!=null">AND hs.name LIKE CONCAT(CONCAT('%', #{hostServer.name}),'%') </if>
+        <if test="hostServer.ipAdress!=null">AND hs.ip_addres=#{hostServer.ipAdress}</if>
+        <if test="hostServer.port!=null">AND hs.port=#{hostServer.port}</if>
+    </select>
+
+    <!--添加服务主机-->
+    <insert id="addHostServer" parameterType="HostServer" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO host_server(name,ip_addres,port,version)
+        VALUES (#{hostServer.name},#{hostServer.ipAdress},#{hostServer.port},#{hostServer.version});
+    </insert>
+
+    <!--添加服务主机ip或端口配置-->
+    <update id="updateHostServer">
+        UPDATE host_server
+        SET
+        <set>
+            <if test="hostServer.name!=null">name=#{hostServer.name}, </if>
+            <if test="hostServer.ipAdress!=null">ip_addres=#{hostServer.ipAdress}, </if>
+            <if test="hostServer.port!=null">port=#{hostServer.port},</if>
+            <if test="hostServer.version!=null">version=#{hostServer.version} </if>
+        </set>
+        WHERE id=#{hostServer.id}
+    </update>
+
+    <!--删除无用主机-->
+    <delete id="delHostServer">
+        DELETE FROM host_server WHERE id=#{id}
+    </delete>
+
+</mapper>

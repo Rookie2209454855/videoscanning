@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!--服务主机文件夹配置-->
+<mapper namespace="com.video.scanning.dao.HostProjectDao">
+    <!--<sql id="hostProject">
+        id,name,disk_id as diskId, version
+    </sql>
+
+    &lt;!&ndash;&ndash;&gt;
+    <select id="">
+
+    </select>
+
+    <insert id="">
+
+    </insert>
+
+    <update id="">
+
+    </update>
+
+    <delete id="">
+
+    </delete>-->
+
+</mapper>
