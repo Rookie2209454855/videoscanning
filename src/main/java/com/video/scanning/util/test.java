@@ -1,4 +1,4 @@
-package com.video.scanning.util;
+package com.video.util;
 
 
 public class test {

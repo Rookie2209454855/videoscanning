@@ -1,10 +1,10 @@
 database:
     host: 192.168.137.1
     port: 3306
-    name: root
+    name: videoserver
 
 server:
-    port: 88
+    port: 8080
 
 spring:
     datasource:
@@ -39,7 +39,7 @@ logging:
     level:
         root: INFO
         com:
-            gclasscn:
-                analysis:
-                   dao: DEBUG
+            video:
+                scanning:
+                   dao: debug
     file: logs/video-scanning.log

@@ -1,5 +1,6 @@
 package com.video.scanning.service;
 
+
 import com.video.scanning.domain.VideoIP;
 
 /**

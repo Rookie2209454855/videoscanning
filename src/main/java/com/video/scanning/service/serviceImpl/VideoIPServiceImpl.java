@@ -19,4 +19,5 @@ public class VideoIPServiceImpl implements VideoIPService {
     public Integer addIpServer(VideoIP videoIP) {
         return videoIPDao.addIpServer(videoIP);
     }
+
 }

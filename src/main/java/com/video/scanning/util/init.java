@@ -1,10 +1,9 @@
-package com.video.scanning.util;
+package com.video.util;
 
 
-import com.video.scanning.entity.Vide;
+import com.video.entity.Vide;
 
 import java.io.File;
-import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.LinkedList;

@@ -7,7 +7,7 @@ import lombok.*;
 /*Data 为类提供无参构造方法*/
 @NoArgsConstructor
 @AllArgsConstructor
-public class HostFile {
+public class HostFile extends HostPage{
 
     @NonNull
     private Integer id;
@@ -19,5 +19,9 @@ public class HostFile {
     private Integer projectId;
 
     private String version;
+
+    private String filePath;
+
+    private String describe;
 
 }

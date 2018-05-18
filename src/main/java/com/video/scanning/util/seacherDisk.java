@@ -1,4 +1,4 @@
-package com.video.scanning.util;
+package com.video.util;
 
 import javax.swing.filechooser.FileSystemView;
 import java.io.File;

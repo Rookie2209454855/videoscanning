@@ -33,15 +33,6 @@ public class VideoServerController {
     }
 
 
-    /***
-     *
-     * @return
-     */
-    public Integer addcomputer(){
-
-        return null;
-    };
-
 
 
 }

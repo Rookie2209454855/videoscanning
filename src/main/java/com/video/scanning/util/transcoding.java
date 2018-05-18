@@ -1,4 +1,4 @@
-package com.video.scanning.util;
+package com.video.util;
 
 import java.io.File;
 import java.io.IOException;

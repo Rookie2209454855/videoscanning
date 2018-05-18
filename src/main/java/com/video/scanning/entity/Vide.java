@@ -1,4 +1,4 @@
-package com.video.scanning.entity;
+package com.video.entity;
 
 import java.net.UnknownHostException;
 
