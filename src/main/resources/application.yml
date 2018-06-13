@@ -1,16 +1,28 @@
 database:
-    host: 192.168.137.1
+    host: 192.168.253.128
     port: 3306
     name: videoserver
+    username: root
+    password: root
+
+videoscanning:
+  upload:
+    dir: F://uploadfile
+    #1024*1024=1 048 576,5M=5 242 880
+    chunkSize: 5 242 880
+
 
 server:
-    port: 8080
+    port: 9090
+    context-path: /video
 
 spring:
+    profiles:
+      active: sit
     datasource:
         url: jdbc:mysql://${database.host}:${database.port}/${database.name}?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
-        username: root
-        password: root
+        username: ${database.username}
+        password: ${database.password}
         driver-class-name: com.mysql.jdbc.Driver
         maxActive: 1000
         initialSize: 10
@@ -19,11 +31,18 @@ spring:
         test-on-borrow: true 
         test-on-return: true
         validation-query: SELECT 1
-        
     http:
         multipart:
             max-file-size: 5120Mb
             max-request-size: 5120Mb
+    redis:
+      host: 192.168.253.128
+      port: 6379
+      pool:
+        max-active: 30
+        max-idle: 10
+        max-wait: 10000
+      timeout: 0
 
 mybatis: 
     mapperLocations: classpath:/mapper/*.xml
