@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.video.scanning.dao.HostDiskMapper">
+  <resultMap id="BaseResultMap" type="com.video.scanning.entity.HostDisk">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="diskcode" jdbcType="VARCHAR" property="diskcode" />
+    <result column="hostserveid" jdbcType="INTEGER" property="hostserveid" />
+    <result column="version" jdbcType="VARCHAR" property="version" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, diskcode, hostserveid, version
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from host_disk
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from host_disk
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.video.scanning.entity.HostDisk">
+    insert into host_disk (id, name, diskcode, 
+      hostserveid, version)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{diskcode,jdbcType=VARCHAR}, 
+      #{hostserveid,jdbcType=INTEGER}, #{version,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.video.scanning.entity.HostDisk">
+    insert into host_disk
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="diskcode != null">
+        diskcode,
+      </if>
+      <if test="hostserveid != null">
+        hostserveid,
+      </if>
+      <if test="version != null">
+        version,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="diskcode != null">
+        #{diskcode,jdbcType=VARCHAR},
+      </if>
+      <if test="hostserveid != null">
+        #{hostserveid,jdbcType=INTEGER},
+      </if>
+      <if test="version != null">
+        #{version,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.video.scanning.entity.HostDisk">
+    update host_disk
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="diskcode != null">
+        diskcode = #{diskcode,jdbcType=VARCHAR},
+      </if>
+      <if test="hostserveid != null">
+        hostserveid = #{hostserveid,jdbcType=INTEGER},
+      </if>
+      <if test="version != null">
+        version = #{version,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.video.scanning.entity.HostDisk">
+    update host_disk
+    set name = #{name,jdbcType=VARCHAR},
+      diskcode = #{diskcode,jdbcType=VARCHAR},
+      hostserveid = #{hostserveid,jdbcType=INTEGER},
+      version = #{version,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.video.scanning.entity.HostDisk">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="diskcode" jdbcType="VARCHAR" property="diskcode" />
+    <result column="hostserveid" jdbcType="INTEGER" property="hostserveid" />
+    <result column="version" jdbcType="VARCHAR" property="version" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, diskcode, hostserveid, version
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from host_disk
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from host_disk
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.video.scanning.entity.HostDisk">
+    insert into host_disk (id, name, diskcode, 
+      hostserveid, version)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{diskcode,jdbcType=VARCHAR}, 
+      #{hostserveid,jdbcType=INTEGER}, #{version,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.video.scanning.entity.HostDisk">
+    insert into host_disk
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="diskcode != null">
+        diskcode,
+      </if>
+      <if test="hostserveid != null">
+        hostserveid,
+      </if>
+      <if test="version != null">
+        version,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="diskcode != null">
+        #{diskcode,jdbcType=VARCHAR},
+      </if>
+      <if test="hostserveid != null">
+        #{hostserveid,jdbcType=INTEGER},
+      </if>
+      <if test="version != null">
+        #{version,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.video.scanning.entity.HostDisk">
+    update host_disk
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="diskcode != null">
+        diskcode = #{diskcode,jdbcType=VARCHAR},
+      </if>
+      <if test="hostserveid != null">
+        hostserveid = #{hostserveid,jdbcType=INTEGER},
+      </if>
+      <if test="version != null">
+        version = #{version,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.video.scanning.entity.HostDisk">
+    update host_disk
+    set name = #{name,jdbcType=VARCHAR},
+      diskcode = #{diskcode,jdbcType=VARCHAR},
+      hostserveid = #{hostserveid,jdbcType=INTEGER},
+      version = #{version,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="entity.HostDisk">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="diskcode" jdbcType="VARCHAR" property="diskcode" />
+    <result column="hostserveid" jdbcType="INTEGER" property="hostserveid" />
+    <result column="version" jdbcType="VARCHAR" property="version" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, diskcode, hostserveid, version
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from host_disk
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from host_disk
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="entity.HostDisk">
+    insert into host_disk (id, name, diskcode, 
+      hostserveid, version)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{diskcode,jdbcType=VARCHAR}, 
+      #{hostserveid,jdbcType=INTEGER}, #{version,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="entity.HostDisk">
+    insert into host_disk
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="diskcode != null">
+        diskcode,
+      </if>
+      <if test="hostserveid != null">
+        hostserveid,
+      </if>
+      <if test="version != null">
+        version,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="diskcode != null">
+        #{diskcode,jdbcType=VARCHAR},
+      </if>
+      <if test="hostserveid != null">
+        #{hostserveid,jdbcType=INTEGER},
+      </if>
+      <if test="version != null">
+        #{version,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="entity.HostDisk">
+    update host_disk
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="diskcode != null">
+        diskcode = #{diskcode,jdbcType=VARCHAR},
+      </if>
+      <if test="hostserveid != null">
+        hostserveid = #{hostserveid,jdbcType=INTEGER},
+      </if>
+      <if test="version != null">
+        version = #{version,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="entity.HostDisk">
+    update host_disk
+    set name = #{name,jdbcType=VARCHAR},
+      diskcode = #{diskcode,jdbcType=VARCHAR},
+      hostserveid = #{hostserveid,jdbcType=INTEGER},
+      version = #{version,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.video.scanning.entity.HostDisk">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="diskcode" jdbcType="VARCHAR" property="diskcode" />
+    <result column="hostserveid" jdbcType="INTEGER" property="hostserveid" />
+    <result column="version" jdbcType="VARCHAR" property="version" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, diskcode, hostserveid, version
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from host_disk
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from host_disk
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.video.scanning.entity.HostDisk">
+    insert into host_disk (id, name, diskcode, 
+      hostserveid, version)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{diskcode,jdbcType=VARCHAR}, 
+      #{hostserveid,jdbcType=INTEGER}, #{version,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.video.scanning.entity.HostDisk">
+    insert into host_disk
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="diskcode != null">
+        diskcode,
+      </if>
+      <if test="hostserveid != null">
+        hostserveid,
+      </if>
+      <if test="version != null">
+        version,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="diskcode != null">
+        #{diskcode,jdbcType=VARCHAR},
+      </if>
+      <if test="hostserveid != null">
+        #{hostserveid,jdbcType=INTEGER},
+      </if>
+      <if test="version != null">
+        #{version,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.video.scanning.entity.HostDisk">
+    update host_disk
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="diskcode != null">
+        diskcode = #{diskcode,jdbcType=VARCHAR},
+      </if>
+      <if test="hostserveid != null">
+        hostserveid = #{hostserveid,jdbcType=INTEGER},
+      </if>
+      <if test="version != null">
+        version = #{version,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.video.scanning.entity.HostDisk">
+    update host_disk
+    set name = #{name,jdbcType=VARCHAR},
+      diskcode = #{diskcode,jdbcType=VARCHAR},
+      hostserveid = #{hostserveid,jdbcType=INTEGER},
+      version = #{version,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="entity.HostDisk">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="diskcode" jdbcType="VARCHAR" property="diskcode" />
+    <result column="hostserveid" jdbcType="INTEGER" property="hostserveid" />
+    <result column="version" jdbcType="VARCHAR" property="version" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, diskcode, hostserveid, version
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from host_disk
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from host_disk
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="entity.HostDisk">
+    insert into host_disk (id, name, diskcode, 
+      hostserveid, version)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{diskcode,jdbcType=VARCHAR}, 
+      #{hostserveid,jdbcType=INTEGER}, #{version,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="entity.HostDisk">
+    insert into host_disk
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="diskcode != null">
+        diskcode,
+      </if>
+      <if test="hostserveid != null">
+        hostserveid,
+      </if>
+      <if test="version != null">
+        version,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="diskcode != null">
+        #{diskcode,jdbcType=VARCHAR},
+      </if>
+      <if test="hostserveid != null">
+        #{hostserveid,jdbcType=INTEGER},
+      </if>
+      <if test="version != null">
+        #{version,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="entity.HostDisk">
+    update host_disk
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="diskcode != null">
+        diskcode = #{diskcode,jdbcType=VARCHAR},
+      </if>
+      <if test="hostserveid != null">
+        hostserveid = #{hostserveid,jdbcType=INTEGER},
+      </if>
+      <if test="version != null">
+        version = #{version,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="entity.HostDisk">
+    update host_disk
+    set name = #{name,jdbcType=VARCHAR},
+      diskcode = #{diskcode,jdbcType=VARCHAR},
+      hostserveid = #{hostserveid,jdbcType=INTEGER},
+      version = #{version,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="entity.HostDisk">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="diskcode" jdbcType="VARCHAR" property="diskcode" />
+    <result column="hostserveid" jdbcType="INTEGER" property="hostserveid" />
+    <result column="version" jdbcType="VARCHAR" property="version" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, diskcode, hostserveid, version
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from host_disk
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from host_disk
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="entity.HostDisk">
+    insert into host_disk (id, name, diskcode, 
+      hostserveid, version)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{diskcode,jdbcType=VARCHAR}, 
+      #{hostserveid,jdbcType=INTEGER}, #{version,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="entity.HostDisk">
+    insert into host_disk
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="diskcode != null">
+        diskcode,
+      </if>
+      <if test="hostserveid != null">
+        hostserveid,
+      </if>
+      <if test="version != null">
+        version,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="diskcode != null">
+        #{diskcode,jdbcType=VARCHAR},
+      </if>
+      <if test="hostserveid != null">
+        #{hostserveid,jdbcType=INTEGER},
+      </if>
+      <if test="version != null">
+        #{version,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="entity.HostDisk">
+    update host_disk
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="diskcode != null">
+        diskcode = #{diskcode,jdbcType=VARCHAR},
+      </if>
+      <if test="hostserveid != null">
+        hostserveid = #{hostserveid,jdbcType=INTEGER},
+      </if>
+      <if test="version != null">
+        version = #{version,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="entity.HostDisk">
+    update host_disk
+    set name = #{name,jdbcType=VARCHAR},
+      diskcode = #{diskcode,jdbcType=VARCHAR},
+      hostserveid = #{hostserveid,jdbcType=INTEGER},
+      version = #{version,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
