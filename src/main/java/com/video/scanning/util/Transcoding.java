@@ -9,7 +9,7 @@ import java.util.List;
  * ffmpg
  * 格式转码
  */
-public class transcoding {
+public class Transcoding {
 
     private static String inputPath = "";
 

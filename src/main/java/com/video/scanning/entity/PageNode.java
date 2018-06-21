@@ -1,4 +1,4 @@
-package com.video.entity;
+package com.video.scanning.entity;
 
 /**
  * Created by fengtiepeng on 2017/10/11.

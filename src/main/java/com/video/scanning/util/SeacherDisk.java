@@ -7,7 +7,7 @@ import java.text.DecimalFormat;
 /**
  * Created by fengtiepeng on 2017/7/21.
  */
-public class seacherDisk {
+public class SeacherDisk {
 
     public static String FormetFileSize(long fileS) {
         DecimalFormat df = new DecimalFormat("#.00");

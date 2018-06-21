@@ -13,7 +13,7 @@ import java.util.Map;
 /**
  * Created by fengtiepeng on 2017/7/14.
  */
-public  class init {
+public  class Init {
      static List<Vide> list=new LinkedList<Vide>();//创建list集合，用来暂时储存
      static Map<String,String> videoType=new HashMap<String,String>();
      static Map<String,String> reMap(){
