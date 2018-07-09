@@ -35,14 +35,14 @@ public class StorageServiceImpl implements StorageService {
 
 
     //这个必须与前端设定的值一致
-    @Value("${videoscanning.upload.chunkSize}")
+    @Value("5242880")
     private long CHUNK_SIZE;
 
-    @Value("${videoscanning.upload.dir}")
+    @Value("F://uploadfile")
     private String finalDirPath;
 
     @Autowired
-    public StorageServiceImpl(@Value("${videoscanning.upload.dir}") String location) {
+    public StorageServiceImpl(@Value("F://uploadfile") String location) {
         this.rootPaht = Paths.get(location);
     }
 

@@ -1,3 +1,4 @@
+
 database:
     host: 192.168.253.128
     port: 3306
@@ -11,8 +12,6 @@ server:
     context-path: /video
 
 spring:
-  profiles:
-    active: dev
   datasource:
           url: jdbc:mysql://${database.host}:${database.port}/${database.name}?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
           username: ${database.username}
@@ -37,23 +36,29 @@ spring:
           max-idle: 10
           max-wait: 10000
         timeout: 0
-
   mybatis:
       mapperLocations: classpath:/mapper/*.xml
       typeAliasesPackage: com.video.scanning.domain
 
-  #monitor
-  management:
-      port: 8097
-      security:
-          enabled: false
 
-  logging:
-      level:
-          root: INFO
-          com:
-              video:
-                  scanning:
-                     dao: debug
-      file: logs/video-scanning.log
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql
+
+#monitor
+management:
+    port: 8097
+    security:
+        enabled: false
+
+logging:
+    level:
+        root: INFO
+        com:
+            video:
+                scanning:
+                   dao: debug
+    file: logs/video-scanning.log
 
